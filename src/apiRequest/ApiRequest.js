@@ -2,7 +2,7 @@
 import  axios  from 'axios';
 import unauthorized from '../utility/unauthorized';
 
-let BaseUrl = "https://e-commerse-project-xzpe.vercel.app/"
+// let BaseUrl = "https://e-commerse-project-xzpe.vercel.app/"
 
 export async function BrandListRequest(){
    try {
@@ -26,7 +26,7 @@ export async function CategoryListRequest(){
 
 export async function CategoryListByRemark(remark){
    try {
-    let result = await axios.get("https://e-commerse-project-xzpe.vercel.app/api/v1/ListByRemark"+remark);
+    let result = await axios.get("https://e-commerse-project-xzpe.vercel.app/api/v1/ListByRemark/"+remark);
     let data = result.data['data']
     return data;
    } catch (e) {
@@ -36,7 +36,7 @@ export async function CategoryListByRemark(remark){
 
 export  async function DetailsListRequest(id) {
    try {
-       let result=await axios.get('https://e-commerse-project-xzpe.vercel.app/api/v1/ProductDetails'+id);
+       let result=await axios.get('https://e-commerse-project-xzpe.vercel.app/api/v1/ProductDetails/'+id);
        let data=result.data['data'];
        return data;
    }
@@ -47,7 +47,7 @@ export  async function DetailsListRequest(id) {
 
 export  async function ListBySmilierRequest(categoryID) {
    try {
-       let result=await axios.get('https://e-commerse-project-xzpe.vercel.app/api/v1/ListBySmilier'+categoryID);
+       let result=await axios.get('https://e-commerse-project-xzpe.vercel.app/api/v1/ListBySmilier/'+categoryID);
        let data=result.data['data'];
        return data;
    }
