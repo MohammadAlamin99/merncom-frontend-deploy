@@ -26,7 +26,7 @@ export async function CategoryListRequest(){
 
 export async function CategoryListByRemark(remark){
    try {
-    let result = await axios.get("https://e-commerse-project-xzpe.vercel.app/api/v1/ListByRemark/"+remark);
+    let result = await axios.get("https://e-commerse-project-xzpe.vercel.app/api/v1/ListByRemark"+remark);
     let data = result.data['data']
     return data;
    } catch (e) {
@@ -36,7 +36,7 @@ export async function CategoryListByRemark(remark){
 
 export  async function DetailsListRequest(id) {
    try {
-       let result=await axios.get('https://e-commerse-project-xzpe.vercel.app/api/v1/ProductDetails/'+id);
+       let result=await axios.get('https://e-commerse-project-xzpe.vercel.app/api/v1/ProductDetails'+id);
        let data=result.data['data'];
        return data;
    }
@@ -47,7 +47,7 @@ export  async function DetailsListRequest(id) {
 
 export  async function ListBySmilierRequest(categoryID) {
    try {
-       let result=await axios.get('https://e-commerse-project-xzpe.vercel.app/api/v1/ListBySmilier/'+categoryID);
+       let result=await axios.get('https://e-commerse-project-xzpe.vercel.app/api/v1/ListBySmilier'+categoryID);
        let data=result.data['data'];
        return data;
    }
@@ -60,7 +60,7 @@ export  async function ListBySmilierRequest(categoryID) {
 export  async function AddWishListRequest(productID) {
    try {
        let reqBody = {"productID":productID} 
-       let result=await axios.post('https://e-commerse-project-xzpe.vercel.app/api/v1/CreateWishList/',reqBody);
+       let result=await axios.post('https://e-commerse-project-xzpe.vercel.app/api/v1/CreateWishList',reqBody);
        let data=result.data;
        return data;
    }
